@@ -7,7 +7,10 @@
       </b-col>
       <template v-for="items in cards">
         <b-col :key="items.title" class="mx-4 mt-3" sm="12" md="3">
-          <weekly-cards />
+          <weekly-cards
+            :card-title="items.title"
+            :background-image="items.backgroundImage"
+          />
         </b-col>
       </template>
     </b-row>
@@ -24,7 +27,12 @@ export default {
   },
   data() {
     return {
-      cards: [{ title: 'win!' }],
+      cards: [
+        {
+          title: 'Intro',
+          backgroundImage: require('@/assets/Photos/Week_One/The_Basics.jpg'),
+        },
+      ],
     }
   },
 }

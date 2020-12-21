@@ -1,37 +1,69 @@
 <template>
   <b-container class="Root-Container" fluid>
     <b-jumbotron id="Jumbotron" fluid text-variant="white">
-      <p id="Credit">Photo By Keli'i McCrary</p>
-      <template #header>The Basics</template>
-      <template #lead>
-        What is HTML, Prequisites, Composition of elements, recommended workflow
-      </template>
+      <b-navbar fluid class="Jumbotron-Menu">
+        <b-navbar-brand class="Jumbotron-Menu-Items">
+          Photo By Keli'i McCrary
+        </b-navbar-brand>
+        <b-navbar-nav class="ml-auto">
+          <b-nav-item>
+            <b-img
+              id="Home-Icon"
+              class="Jumbotron-Menu-Items"
+              fluid
+              sm="1"
+              :src="require('@/assets/Widgets/menu.svg')"
+            />
+          </b-nav-item>
+          <b-nav-item>
+            <NuxtLink to="/">
+              <b-img
+                id="Home-Icon"
+                class="Jumbotron-Menu-Items"
+                fluid
+                sm="1"
+                :src="require('@/assets/Widgets/home.svg')"
+              />
+            </NuxtLink>
+          </b-nav-item>
+        </b-navbar-nav>
+      </b-navbar>
+      <template #header>Introduction</template>
+      <template #lead> About the website, Tutorial structure, goals </template>
     </b-jumbotron>
     <b-container>
       <b-row>
-        <b-col sm="12">
-          <h1>What is HTML, CSS, & JS?</h1>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
-            condimentum, erat ac sollicitudin vehicula, velit enim tristique
-            magna, sed egestas ex dui vel lacus. Pellentesque eleifend lobortis
-            tellus, non egestas quam commodo ornare. Suspendisse finibus, turpis
-            nec vulputate suscipit, metus tellus feugiat neque, et sollicitudin
-            erat felis bibendum lectus. Vivamus felis mi, blandit ut tellus non,
-            accumsan vehicula dolor. In ullamcorper, eros vitae fermentum
-            malesuada, lacus nulla posuere nisi, non tempor orci dolor nec
-            velit. Etiam facilisis lacinia odio sed semper. Suspendisse
-            pellentesque tortor fringilla, blandit lacus cursus, accumsan dui.
-            Fusce consectetur nunc a nibh hendrerit fringilla.
-          </p>
-        </b-col>
+        <template v-for="items in sections">
+          <text-section :key="items.sectionTitle" :section-content="items" />
+        </template>
       </b-row>
     </b-container>
   </b-container>
 </template>
 
 <script>
-export default {}
+import TextSection from '@/components/TextSection'
+export default {
+  components: {
+    'text-section': TextSection,
+  },
+  data() {
+    return {
+      sections: [
+        {
+          sectionTitle: 'About the Course',
+          contentImage: {
+            source: require('@/assets/Photos/Week_One/amigos.jpg'),
+            creatorCaption: 'Photo by a friend',
+            context:
+              '"A journey of a thousand miles is started by taking the first step." ~ Chiense Proverb',
+          },
+          contentText: 'Welcome to the website! ',
+        },
+      ],
+    }
+  },
+}
 </script>
 
 <style scoped>
@@ -41,10 +73,22 @@ export default {}
   padding: 0;
 }
 
-#Credit {
+.Jumbotron-Menu {
   position: absolute;
-  left: 2%;
-  top: 2%;
+  width: 100%;
+  top: 0%;
+  left: 0%;
+}
+
+.Jumbotron-Menu-Items {
+  color: #fcfcfc;
+  fill: #fcfcfc;
+}
+
+#Home-Icon {
+  height: 2em;
+  color: #fcfcfc;
+  z-index: 2;
 }
 
 #Jumbotron {

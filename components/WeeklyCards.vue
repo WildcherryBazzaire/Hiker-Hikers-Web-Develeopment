@@ -1,13 +1,29 @@
 <template>
-  <b-card class="Weekly-Cards">
-    <b-card-body class="Weekly-Cards-Body">
-      <h2>The Basics</h2>
-    </b-card-body>
-  </b-card>
+  <NuxtLink to="/reader">
+    <b-card
+      :style="{ backgroundImage: `url(${backgroundImage})` }"
+      class="Weekly-Cards"
+    >
+      <b-card-body class="Weekly-Cards-Body">
+        <h2>{{ cardTitle }}</h2>
+      </b-card-body>
+    </b-card>
+  </NuxtLink>
 </template>
 
 <script>
-export default {}
+export default {
+  props: {
+    cardTitle: {
+      default: 'Insert Name',
+      type: String,
+    },
+    backgroundImage: {
+      default: '',
+      type: String,
+    },
+  },
+}
 </script>
 
 <style scoped>
@@ -19,11 +35,18 @@ export default {}
   align-items: center;
   border-radius: 1rem;
   text-align: center;
-  background-image: url('~@/assets/Photos/Week_One/The_Basics.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   color: #fcfcfc;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.card-body {
+  flex: 0;
 }
 
 .Weekly-Cards-Body {
