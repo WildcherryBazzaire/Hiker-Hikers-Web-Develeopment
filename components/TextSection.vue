@@ -3,8 +3,10 @@
     <h1 class="text-md-left text-sm-center">
       {{ sectionContent.sectionTitle }}
     </h1>
-    <div class="Image-Container">
-      <p class="Credit">{{ sectionContent.contentImage.creatorCaption }}</p>
+    <div v-if="sectionContent.contentImage" class="Image-Container">
+      <p class="Credit">
+        {{ sectionContent.contentImage.creatorCaption }}
+      </p>
       <b-img-lazy
         v-if="sectionContent.contentImage.source"
         :src="sectionContent.contentImage.source"
