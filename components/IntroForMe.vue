@@ -10,9 +10,9 @@
       />
     </b-col>
     <b-col>
-      <h1>Hello There!!!</h1>
+      <h1>Hello There,</h1>
       <p id="Description-Text">
-        I'm Keli'i McCrary, and you caught me in progress desigining this
+        I'm Keli'i McCrary, and you caught me in progress designing this
         tutorial. Please feel free to check out what is currently available
         right now as more will be added soon!
       </p>

@@ -17,7 +17,7 @@
         {{ sectionContent.contentImage.context }}
       </p>
     </div>
-    <p>{{ sectionContent.contentText }}</p>
+    <p class="text">{{ sectionContent.contentText }}</p>
     <slot></slot>
   </b-col>
 </template>
@@ -57,5 +57,9 @@ export default {
   position: absolute;
   left: 2%;
   top: 2%;
+}
+
+.text {
+  font-size: 1.2rem;
 }
 </style>

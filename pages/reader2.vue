@@ -1,26 +1,29 @@
 <template>
   <b-container class="Root-Container" fluid>
     <!-- Where the jumbotron is -->
-    <reader-jumbotron :image="JumbotronMenu.image" :text="JumbotronMenu.text">
-    </reader-jumbotron>
+    <!-- <reader-jumbotron :image="JumbotronMenu.image" :text="JumbotronMenu.text">
+    </reader-jumbotron> -->
     <b-container>
       <b-row>
-        <template v-for="items in sections">
+        <b-col sm="12">
+          <p>Under Development! Come back soon!</p>
+        </b-col>
+        <!-- <template v-for="items in sections">
           <text-section :key="items.sectionTitle" :section-content="items" />
-        </template>
+        </template> -->
       </b-row>
     </b-container>
   </b-container>
 </template>
 
 <script>
-import TextSection from '@/components/TextSection'
-import JumboTron from '@/components/ReaderJumbotron'
+// import TextSection from '@/components/TextSection'
+// import JumboTron from '@/components/ReaderJumbotron'
 export default {
-  components: {
-    'text-section': TextSection,
-    'reader-jumbotron': JumboTron,
-  },
+  //   components: {
+  //     'text-section': TextSection,
+  //     'reader-jumbotron': JumboTron,
+  //   },
   data() {
     return {
       JumbotronMenu: {
