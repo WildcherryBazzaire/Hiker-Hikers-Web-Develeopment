@@ -61,5 +61,6 @@ export default {
 
 .text {
   font-size: 1.2rem;
+  white-space: pre-line;
 }
 </style>
